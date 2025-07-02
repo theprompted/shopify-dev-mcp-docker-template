@@ -1,1 +1,1 @@
-# shopify-dev-mcp-render
+# shopify-dev-mcp-docker-template
