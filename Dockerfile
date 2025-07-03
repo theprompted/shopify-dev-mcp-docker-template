@@ -4,6 +4,7 @@ RUN npm i -g @shopify/dev-mcp @latitude-data/supergateway
 
 ENV PORT=8802
 
-CMD /bin/sh -c 'npx -y @shopify/dev-mcp@latest | npx -y @latitude-data/supergateway --stdio --singleSession --port $PORT'
+# Use /bin/sh -c and make sure the supergateway flags are AFTER `--`
+CMD ["/bin/sh","-c","npx -y @shopify/dev-mcp@latest | npx -y @latitude-data/supergateway -- --stdio --singleSession --port $PORT"]
 
 EXPOSE 8802
